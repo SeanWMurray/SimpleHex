@@ -8,6 +8,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.Table;
 import org.eclipse.swt.custom.StyledText;
+import org.eclipse.swt.graphics.Point;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -21,6 +22,7 @@ import org.eclipse.swt.widgets.Composite;
 import utils.Console;
 import utils.HexView;
 import Editor.FileView;
+import org.eclipse.wb.swt.SWTResourceManager;
 
 public class View {
 
@@ -103,7 +105,9 @@ public class View {
 		//What will be the hex view
 		TextViewer textViewer = new TextViewer(leftRightSash, SWT.BORDER);
 		StyledText styledText = textViewer.getTextWidget();
+		styledText.setFont(SWTResourceManager.getFont("Source Code Pro", 12, SWT.NORMAL));
 		styledText.setEditable(false);
+		styledText.setWordWrap(true);
 		
 		HexView hexeditor = new HexView(styledText, textViewer);
 		
