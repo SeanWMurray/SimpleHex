@@ -26,7 +26,7 @@ public class HexView {
 		for (byte b : bytes) {
 			sb.append(String.format("%02x ", b));
 		}
-		text.setText(sb.toString());
+		text.setText(sb.toString().toUpperCase());
 	}
 	
 }
